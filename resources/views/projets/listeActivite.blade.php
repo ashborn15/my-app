@@ -20,6 +20,7 @@
             <th scope="col">date</th>
             <th scope="col">rapport</th>
             <th scope="col">statut</th>
+            <th scope="col">Options</th>
           </tr>
         </thead>
         <tbody>
@@ -32,11 +33,16 @@
                 <td>{{$activite->date}}</td>
                 <td>{{$activite->rapport}}</td>
                 <td>{{$activite->statut}}</td>
+                <td>
+                  <button class="btn btn-primary">Modifier</button>
+                  <button class="btn btn-danger">Supprimer</button>
+                </td>
               </tr>
             @endforeach
           
         </tbody>
       </table>
+      <button class="btn btn-info text-white"><a href="{{ route('projects.create') }}">Ajouter un nouveau projet</a></button>
    
 </body>
 </html>

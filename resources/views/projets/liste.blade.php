@@ -23,27 +23,32 @@
             <th scope="col">date début</th>
             <th scope="col">date fin</th>
             <th scope="col">statut</th>
+            <th scope="col">Options</th>
           </tr>
-            <button class="btn btn-primary">ajouter un nouveau projet</button>
-          
         </thead>
         <tbody>
-            @foreach  ($nos_projets as $projet)
-            <p></p>
-            <tr>
-                <th scope="row">{{$projet->id}}</th>
-                <td colspan="1">{{$projet->code}}</td>
-                <td>{{$projet->nom}}</td>
-                <td>{{$projet->description}}</td>
-                <td>{{$projet->budget}}</td>
-                <td>{{$projet->date_debut}}</td>
-                <td>{{$projet->date_fin}}</td>
-                <td>{{$projet->statut}}</td>
-              </tr>
+
+            @foreach($projets as $projet)
+                <tr>
+                    <th scope="row">{{$projet->id}}</th>
+                    <td>{{$projet->code}}</td>
+                    <td>{{$projet->nom}}</td>
+                    <td>{{$projet->description}}</td>
+                    <td>{{$projet->budget}}</td>
+                    <td>{{$projet->date_debut}}</td>
+                    <td>{{$projet->date_fin}}</td>
+                    <td>{{$projet->statut}}</td>
+                    <td>
+                      <a href="{{ route('projects.edit', ['project' => $projet->id]) }}" class="btn btn-primary">Modifier</a>
+                      <button class="btn btn-danger">Supprimer</button>
+                    </td>
+                </tr>
             @endforeach
           
         </tbody>
       </table>
+
+      <button class="btn btn-info text-white"><a href="{{ route('projects.create') }}">Ajouter un nouveau projet</a></button>
 
     </div>  
 </body>

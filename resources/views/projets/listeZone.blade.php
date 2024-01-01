@@ -16,6 +16,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">libelle</th>
+            <th scope="col">Options</th>
           </tr>
         </thead>
         <tbody>
@@ -24,12 +25,17 @@
             <tr>
                 <th scope="row">{{$zone->id}}</th>
                 <td>{{$zone->libelle}}</td>
+                <td>
+                  <button class="btn btn-primary">Modifier</button>
+                  <button class="btn btn-danger">Supprimer</button>
+                </td>
                 
               </tr>
             @endforeach
           
         </tbody>
       </table>
+      <button class="btn btn-info text-white"><a href="{{ route('projects.create') }}">Ajouter un nouveau projet</a></button>
    
 </body>
 </html>
